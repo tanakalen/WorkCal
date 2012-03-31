@@ -1,0 +1,23 @@
+usage: workcal [-h] [-i] [-f [FILE]] [-p PERSON]
+
+Process emailed Word file containing work schedule.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i, --ics             output to iCalendar format [RFC 5545]
+  -f [FILE], --file [FILE]
+                        file to get calendar information from
+  -p PERSON, --person PERSON
+                        schedule for person requested, otherwise all events
+                        listed
+
+Ex: workcal -f dec.docx -p Tanaka
+
+Dependencies: icalendar, pytz, PIL, lxml (included into virtualenv workcal_env)
+
+Config file: either in .workcal/config or workcal.ini
+Parameters:
+    timezone = pytz timezone fom Olson tz database
+    call-start = 24h clock time when call starts (format hr:min)
+    call-end = 24h clock time when call ends (format hr:min)
+    file-start = text string that marks the beginning of the calendar
