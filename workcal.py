@@ -234,7 +234,7 @@ def main(argv=None):
     try:
         document = opendocx(args.file)
         paratextlist = getdocumenttext(document)
-    except TypeError: #File is not docx
+    except KeyError, TypeError: #File is not docx
         with open(args.file.name, 'rb') as f:
             document = f.read()
         ldoc = re.split('\r|\x07', document) #FRAGILE
