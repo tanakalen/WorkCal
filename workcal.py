@@ -114,7 +114,6 @@ def process(textlist):
         #Check if additional events (i.e. Backup, Kaiser, meeting, etc.)
         other = d[i][2:]
         if other:
-            print other
             for j in other:
                 #Backup, lecture, or Kaiser listed as ex: "Kaiser: Tanaka"
                 if ':' in j:
