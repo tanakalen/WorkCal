@@ -56,12 +56,12 @@ MONTH = {'JANUARY':'01','FEBRUARY':'02','MARCH':'03',
 GMT = pytz.utc
 
 def extractkey(str):
-    l = str.strip().split(": ")
-    return l[0]
+    l = str.split(":")
+    return l[0].strip()
 
 def extractvalue(str):
-    l = str.strip().split(": ")
-    return l[1]
+    l = str.split(":")
+    return l[1].strip()
 
 def process(textlist):
     #Careful: next month may be included; ('1' as mark is FRAGILE)
@@ -114,9 +114,10 @@ def process(textlist):
         #Check if additional events (i.e. Backup, Kaiser, meeting, etc.)
         other = d[i][2:]
         if other:
+            print other
             for j in other:
                 #Backup, lecture, or Kaiser listed as ex: "Kaiser: Tanaka"
-                if ': ' in j:
+                if ':' in j:
                     person = extractvalue(j)
                     subject = extractkey(j)
                     otherevent = GCalEvent(subject, i)
