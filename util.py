@@ -66,7 +66,7 @@ class GCalEvent(Event):
     alldayevent = False
     description = ''
     location = '' #Future geolocation info
-    private = True
+    private = ''
 
     def __init__(self, subject, date):
         self.subject = subject
