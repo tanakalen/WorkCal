@@ -13,7 +13,7 @@ optional arguments:
 
 Ex: workcal -f dec.docx -p Tanaka
 
-Dependencies: icalendar, pytz, PIL, lxml (included into virtualenv workcal_env)
+Dependencies: six, icalendar, pytz, pillow, lxml (included into virtualenv workcal_env)
 
 Config file: either in .workcal/config or workcal.ini
 Parameters:
